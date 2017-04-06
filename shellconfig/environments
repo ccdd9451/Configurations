@@ -1,0 +1,2 @@
+export PYTHONSTARTUP=~/.config/myconfig/pythonrc
+export PYTHONPATH=~/.config/myconfig/pymodule

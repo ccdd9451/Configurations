@@ -1,0 +1,3 @@
+scriptpos=$(dirname `readlink -f ${BASH_SOURCE}`)
+source $scriptpos'/environments'
+source $scriptpos'/falias'
