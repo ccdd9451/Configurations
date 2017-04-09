@@ -1,3 +1,23 @@
 #! /bin/bash
 
 alias init='source README.ini; cat README.ini'
+alias ssh='ssh -Y'
+
+sline(){
+
+echo '#!/bin/bash
+
+####### Job submission for fen2
+#SBATCH --partition=main           # Partition (job queue)
+#SBATCH --job-name=XXX          # Assign an 8-character name to your job
+#SBATCH --nodes=1                  # Number of nodes
+#SBATCH --ntasks=8                # Number of tasks (usually = cores) on each node
+#SBATCH --time=7-0            # Total run time limit (HH:MM:SS)
+#SBATCH --output=out.%N_%j     # STDOUT output file
+#SBATCH --error=out.%N_%j       # STDERR output file
+#SBATCH --export=ALL               # Export you current env to the job env GMAILTY
+#SBATCH --mail-type=END,FAIL      # notifications for job done & fail MAILTY
+#SBATCH --mail-user={email}    # send-to address ECOUNT
+
+' $@ | sbatch
+}
