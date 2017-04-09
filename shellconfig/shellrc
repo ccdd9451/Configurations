@@ -1,3 +1,2 @@
-scriptpos="$( cd "$( dirname "$0" )" && pwd )"
-source $scriptpos'/environments'
-source $scriptpos'/falias'
+source ~/.config/myconfig/shellconfig/environments
+source ~/.config/myconfig/shellconfig/falias
