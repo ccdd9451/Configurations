@@ -1,0 +1,19 @@
+Host fen2
+    HostName fen2.hpc.rutgers.edu
+    Port 22
+    User kh621
+
+Host newton
+    HostName newton.hpc.rutgers.edu
+    Port 22
+    User kh621
+
+Host newton
+    HostName newton.hpc.rutgers.edu
+    Port 22
+    User yw527
+
+Host klab
+    HostName klab2.biomaps.rutgers.edu
+    Port 22
+    User kh621
