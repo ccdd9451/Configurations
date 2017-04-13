@@ -11,7 +11,15 @@ def dump(path, obj, mode='wb'):
 def read(path, mode='r'):
     with open (path, mode) as file:
         return file.read()
-     
+
+def readline(path, mode='r'):
+    with open (path, mode) as file:
+        yield from file.readline()
+
 def write(path, content, mode='w'):
+    with open (path, mode) as file:
+        file.write(content)
+
+def append(path, content, mode='a'):
     with open (path, mode) as file:
         file.write(content)
