@@ -3,13 +3,14 @@
 alias init='source README.ini; cat README.ini'
 alias ssh='ssh -Y'
 
+export jnm=XXX
 sline(){
 
 echo '#!/bin/bash
 
 ####### Job submission for fen2
 #SBATCH --partition=main           # Partition (job queue)
-#SBATCH --job-name=XXX          # Assign an 8-character name to your job
+#SBATCH --job-name='$jnm'          # Assign an 8-character name to your job
 #SBATCH --nodes=1                  # Number of nodes
 #SBATCH --ntasks=8                # Number of tasks (usually = cores) on each node
 #SBATCH --time=7-0            # Total run time limit (HH:MM:SS)
