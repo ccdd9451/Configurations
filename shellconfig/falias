@@ -2,7 +2,7 @@
 
 alias init='source README.ini; cat README.ini'
 alias ssh='ssh -Y'
-alias sqsum=' squeue| tr -s ' ' |cut -f 3-6 -d ' ' |sort -k3 | uniq -c|tr -s ' ' '\t'|expand -t10'
+alias sqsum="squeue| tr -s ' ' |cut -f 3-6 -d ' ' |sort -k3 | uniq -c|tr -s ' ' '\t'|expand -t10"
 alias sq='squeue -u kh621'
 
 export jnm=XXX
