@@ -1,6 +1,9 @@
 shpos="$( cd "$( dirname "$0" )" && pwd )"
-echo $shpos
 mkdir -p ~/.config
-
 ln -s $shpos ~/.config/myconfig
-echo 'source ~/.config/myconfig/shellconfig/shellrc' >> ~/.zshrc
+export CONFIGPATH=$HOME/.config/myconfig
+ln -s $CONFIGPATH/misc/gitconfig ~/.gitconfig
+ln -s $CONFIGPATH/misc/ssh_config ~/.ssh/config
+
+
+echo "source $CONFIGPATH/shellconfig/shellrc" >> ~/.zshrc
