@@ -12,3 +12,13 @@ Host klab
     HostName klab2.biomaps.rutgers.edu
     Port 22
     User kh621
+
+Host clab
+    HostName casegroup.rutgers.edu
+    Port 22
+    User kh621
+
+Host plab
+    HostName peano.rutgers.edu
+    Port 22
+    User kh621
