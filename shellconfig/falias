@@ -5,7 +5,7 @@ alias ssh='ssh -Y'
 alias sqsum="squeue| tr -s ' ' |cut -f 3-6 -d ' ' |sort -k3 | uniq -c|tr -s ' ' '\t'|expand -t10"
 alias sq='squeue -u kh621'
 alias pickle='python -m pickle'
-alias spynb='ssh -N -f -L localhost:8888:localhost:8888'
+alias spynb='ssh -N -L localhost:8888:localhost:8888'
 
 export jnm=XXX
 sline(){
