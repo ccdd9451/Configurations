@@ -1,11 +1,25 @@
 #! /bin/bash
 
 alias init='source README.ini; cat README.ini'
+# alias init_try(){
+# cwd=`pwd`
+# while [ `pwd` != '\' ] 
+# do
+#     if [ -f 'README.ini' ]
+#     then
+# 	source README.ini; cat README.ini
+# 	break
+#     fi
+# done
+# cd $cwd
+# }
+
 alias ssh='ssh -Y'
 alias sqsum="squeue| tr -s ' ' |cut -f 3-6 -d ' ' |sort -k3 | uniq -c|tr -s ' ' '\t'|expand -t10"
 alias sq='squeue -u kh621'
 alias pickle='python -m pickle'
 alias spynb='ssh -N -L localhost:8888:localhost:8888'
+alias vpeek='vim -Mn'
 
 export jnm=XXX
 sline(){
