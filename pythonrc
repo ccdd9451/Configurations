@@ -1,4 +1,0 @@
-import rlcompleter, readline
-readline.parse_and_bind('tab:complete')
-from xilio import *
-import sh

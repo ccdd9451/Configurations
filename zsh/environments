@@ -1,4 +1,0 @@
-export ZSH=$HOME/.config/myconfig/zsh/ohmyzsh
-export PYTHONSTARTUP=$HOME/.config/myconfig/pythonrc
-export PYTHONPATH=$HOME/.config/myconfig/pymodule
-export PATH='.':$PATH

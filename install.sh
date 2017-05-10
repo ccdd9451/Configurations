@@ -10,8 +10,15 @@ ln -sf $CONFIGPATH/misc/sshconfig $HOME/.ssh/config
 ln -sf $CONFIGPATH/misc/ctags $HOME/.ctags
 
 # Install ZSH configurations
-touch $HOME/.zshrc
-echo "source $CONFIGPATH/zsh/shellrc" >> $HOME/.zshrc
+CHECK_ZSH_INSTALLED=$(grep /zsh$ /etc/shells | wc -l)
+if [ ! $CHECK_ZSH_INSTALLED -ge 1 ]; then
+    touch $HOME/.bashrc
+    echo "source $CONFIGPATH/shell/shellrc" >> $HOME/.bashrc
+else
+    touch $HOME/.zshrc
+    echo "source $CONFIGPATH/zsh/zshrc" >> $HOME/.zshrc
+fi
+unset CHECK_ZSH_INSTALLED
 
 # Install vim configurations
-cd vim && yes | ./install.sh
+# cd vim && yes | ./install.sh
