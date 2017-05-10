@@ -1,1 +1,0 @@
-/Users/hukaidong/Configurations/vim/vimrc
