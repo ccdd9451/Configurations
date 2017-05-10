@@ -1,10 +1,17 @@
+# Set up config
 shpos="$( cd "$( dirname "$0" )" && pwd )"
-mkdir -p ~/.config
-ln -s $shpos ~/.config/myconfig
+mkdir -p $HOME/.config
+ln -sfFh $shpos $HOME/.config/myconfig
 export CONFIGPATH=$HOME/.config/myconfig
-ln -s $CONFIGPATH/misc/gitconfig ~/.gitconfig
-ln -s $CONFIGPATH/misc/ssh_config ~/.ssh/config
-ln -s $CONFIGPATH/misc/ctags ~/.ctags
 
+# Link files
+ln -sf $CONFIGPATH/misc/gitconfig $HOME/.gitconfig
+ln -sf $CONFIGPATH/misc/sshconfig $HOME/.ssh/config
+ln -sf $CONFIGPATH/misc/ctags $HOME/.ctags
 
-echo "source $CONFIGPATH/shellconfig/shellrc" >> ~/.zshrc
+# Install ZSH configurations
+touch $HOME/.zshrc
+echo "source $CONFIGPATH/zsh/shellrc" >> $HOME/.zshrc
+
+# Install vim configurations
+cd vim && yes | ./install.sh
