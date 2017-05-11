@@ -21,4 +21,4 @@ fi
 unset CHECK_ZSH_INSTALLED
 
 # Install vim configurations
-# cd vim && yes | ./install.sh
+cd vim && yes | ./install.sh
