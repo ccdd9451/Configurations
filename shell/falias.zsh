@@ -1,5 +1,6 @@
 #! /bin/bash
 
+
 alias init='source README.ini'
 # alias init_try(){
 # cwd=`pwd`
