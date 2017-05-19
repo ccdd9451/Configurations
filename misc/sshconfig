@@ -22,3 +22,8 @@ Host plab
     HostName peano.rutgers.edu
     Port 22
     User kh621
+
+Host vm
+    HostName 127.0.0.1
+    Port 2222
+    User hukaidong
