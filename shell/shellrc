@@ -1,2 +1,9 @@
+#!$SHELL
+
+
+# These profiles will run under bash, otherwise when
+# using zsh, all profiles ended with .zsh will
+# be executed
+
 source $HOME/.config/myconfig/zsh/environments.zsh
 source $HOME/.config/myconfig/zsh/falias.zsh
