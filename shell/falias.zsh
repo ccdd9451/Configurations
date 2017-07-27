@@ -2,7 +2,7 @@
 
 
 # Environment related commands
-alias init='source README.ini'
+alias init='source setup.ini'
 alias sa='source activate'
 alias sd='source deactivate'
 
