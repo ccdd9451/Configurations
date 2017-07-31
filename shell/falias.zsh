@@ -1,4 +1,4 @@
-#! /bin/bash
+#! $SHELL
 
 
 # Environment related commands
@@ -13,6 +13,13 @@ alias spynb='ssh -N -L localhost:8888:localhost:8888'
 # Misc
 alias pickle='python -m pickle'
 alias vpeek='vim -Mn'
+
+# for Ubuntu
+if [[ `uname` -eq 'Linux' ]];
+then
+    alias pbcopy='xclip -selection clipboard'
+    alias pbpaste='xclip -selection clipboard -o'
+fi
 
 # Depercated
 # alias init_try(){
