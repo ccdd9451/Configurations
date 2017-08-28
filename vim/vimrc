@@ -295,7 +295,7 @@ set wildignore=*.o,*~,*.pyc,*.class
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " 回车即选中当前项
-" inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+"inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
 
 " In the quickfix window, <CR> is used to jump to the error under the
 " cursor, so undefine the mapping there.
@@ -413,25 +413,11 @@ noremap H ^
 noremap L $
 
 
-" Map ; to : and save a million keystrokes 用于快速进入命令行
-" nnoremap ; :
-
-
 " 命令行模式增强，ctrl - a到行首， -e 到行尾
 cnoremap <C-j> <t_kd>
 cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
-
-" Mimic Emacs Line Editing in Insert Mode Only
-inoremap <C-A> <Home>
-inoremap <C-B> <Left>
-inoremap <C-E> <End>
-inoremap <C-F> <Right>
-" Ultisnip uses <C-K>
-"inoremap <C-K> <Esc>lDa
-inoremap <C-U> <Esc>d0xi
-inoremap <C-X><C-S> <Esc>:w<CR>a
 
 " 搜索相关
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
@@ -523,11 +509,6 @@ map Y y$
 " 复制选中区到系统剪切板中
 vnoremap <leader>y "+y
 
-" auto jump to end of select
-" vnoremap <silent> y y`]
-" vnoremap <silent> p p`]
-" nnoremap <silent> p p`]
-
 " select all
 map <Leader>sa ggVG
 
@@ -537,18 +518,9 @@ nnoremap <leader>v V`}
 " w!! to sudo & write a file
 cmap w!! w !sudo tee >/dev/null %
 
-" kj 替换 Esc
-inoremap kj <Esc>
-
 " 滚动Speed up scrolling of the viewport slightly
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
-
-
-" Jump to start and end of line using the home row keys
-" 增强tab操作, 导致这个会有问题, 考虑换键
-"nmap t o<ESC>k
-"nmap T O<ESC>j
 
 " Quickly close the current window
 nnoremap q <Esc>
@@ -557,10 +529,6 @@ nnoremap Q q
 
 " Quickly save the current file
 nnoremap <leader>w :w<CR>
-
-" 交换 ' `, 使得可以快速使用'跳到marked位置
-" nnoremap ' `
-" nnoremap ` '
 
 " remap U to <C-r> for easier redo
 nnoremap U <C-r>
@@ -698,5 +666,86 @@ highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
 
+""""""""""""""""""""""""""""""""""""""""""""""
 
+" Mimic Emacs Line Editing in Insert Mode Only
+inoremap <C-A> <Home>
+inoremap <C-B> <Left>
+inoremap <C-E> <End>
+inoremap <C-F> <Right>
+" insert mode commands for quick deletion
+imap <C-X> <BS>
+inoremap <C-H> <ESC>dbxi
+" Dvokra keyboard mapping
+inoremap q '
+inoremap w ,
+inoremap e .
+inoremap r p
+inoremap t y
+inoremap y f
+inoremap u g
+inoremap i c
+inoremap o r
+inoremap p l
+inoremap [ /
+inoremap ] =
+inoremap a a
+inoremap s o
+inoremap d e
+inoremap f u
+inoremap g i
+inoremap h d
+inoremap j h
+inoremap k t
+inoremap l n
+inoremap ; s
+inoremap ' -
+inoremap z ;
+inoremap x q
+inoremap c j
+inoremap v k
+inoremap b x
+inoremap n b
+inoremap m m
+inoremap , w
+inoremap . v
+inoremap / z
+inoremap - [
+inoremap = ]
+
+inoremap Q "
+inoremap W <
+inoremap E >
+inoremap R P
+inoremap T Y
+inoremap Y F
+inoremap U G
+inoremap I C
+inoremap O R
+inoremap P L
+inoremap { ?
+inoremap } +
+inoremap A A
+inoremap S O
+inoremap D E
+inoremap F U
+inoremap G I
+inoremap H D
+inoremap J H
+inoremap K T
+inoremap L N
+inoremap : S
+inoremap " _
+inoremap Z :
+inoremap X Q
+inoremap C J
+inoremap V K
+inoremap B X
+inoremap N B
+inoremap M M
+inoremap < W
+inoremap > V
+inoremap ? Z
+inoremap _ {
+inoremap + }
 
