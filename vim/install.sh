@@ -78,7 +78,7 @@ export SHELL="/bin/sh"
 if $FOR_VIM; then
     vim -u $HOME/.vimrc.bundles +PlugInstall! +PlugClean! +qall
 else
-    nvim -u $HOME/.vimrc.bundles +PlugInstall! +PlugClean! +qall
+    nvim -u $HOME/.vimrc.bundles +PlugInstall! +PlugClean! +qall 
 fi
 export SHELL=$system_shell
 
@@ -91,11 +91,6 @@ echo "cd $CURRENT_DIR/bundle/YouCompleteMe/ && python install.py --clang-complet
 hash conda 2>/dev/null && conda install libgcc
 cd $CURRENT_DIR/bundle/YouCompleteMe/
 git submodule update --init --recursive
-if [ `which clang` ]   # check system clang
-then
-    python install.py --clang-completer --system-libclang   # use system clang
-else
-    python install.py --clang-completer
-fi
+python install.py --clang-completer
 
 echo "Install Done!"
