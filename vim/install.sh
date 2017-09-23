@@ -76,9 +76,9 @@ echo "Step3: update/install plugins using Vim-plug"
 system_shell=$SHELL
 export SHELL="/bin/sh"
 if $FOR_VIM; then
-    vim -u $HOME/.vimrc.bundles +PlugInstall! +PlugClean! +qall
+    vim -u $HOME/.vimrc.bundles +PlugInstall! +PlugClean! +qall +slient
 else
-    nvim -u $HOME/.vimrc.bundles +PlugInstall! +PlugClean! +qall
+    nvim -u $HOME/.vimrc.bundles +PlugInstall! +PlugClean! +qall +slient
 fi
 export SHELL=$system_shell
 
