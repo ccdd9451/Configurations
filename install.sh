@@ -33,7 +33,7 @@ export CONFIGPATH=$HOME/.config/myconfig
 
 # Link files
 ln -sf $CONFIGPATH/misc/gitconfig $HOME/.gitconfig
-ln -sf $CONFIGPATH/misc/sshconfig $HOME/.ssh/config
+# ln -sf $CONFIGPATH/misc/sshconfig $HOME/.ssh/config
 ln -sf $CONFIGPATH/misc/ctags $HOME/.ctags
 ln -sf $CONFIGPATH/misc/tmux $HOME/.tmux.conf
 ln -sf $CONFIGPATH/misc/irbrc $HOME/.irbrc
