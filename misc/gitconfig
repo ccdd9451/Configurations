@@ -7,3 +7,5 @@
 	fl = !git add -A && git commit
 [push]
 	default = simple
+[core]
+	autocrlf = input
