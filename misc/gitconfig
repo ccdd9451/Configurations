@@ -3,8 +3,7 @@
 	email = dongforregister@gmail.com
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	flush = !git add -A && git commit
-	fl = !git add -A && git commit
+	fl = !git add -A && git commit -m
 [push]
 	default = simple
 [core]

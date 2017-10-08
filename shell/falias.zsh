@@ -5,6 +5,7 @@
 alias init='source setup.ini'
 alias sa='source activate'
 alias sd='source deactivate'
+alias l="ls -lh"
 
 # SSH related
 alias ssh='ssh -Y'
@@ -19,7 +20,7 @@ if [ `uname` = 'Linux' ]
 then
     alias pbcopy='xclip -selection clipboard'
     alias pbpaste='xclip -selection clipboard -o'
-    alias open='nautilus'
+    alias open='nautilus >/dev/null 2>&1'
     alias rm='mv --backup=t -t /tmp '
 fi
 
