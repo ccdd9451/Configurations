@@ -20,10 +20,10 @@ then
     alias rm='mv --backup=t -t /tmp '
 fi
 
-if [ `uname` = 'Darwin' ]
-then
-    alias rm='mv --backup=t -t /tmp '
-fi
+# if [ `uname` = 'Darwin' ]
+# then
+#     alias rm='mv --backup=t -t /tmp '
+# fi
 
 # Depercated
 # alias init_try(){
