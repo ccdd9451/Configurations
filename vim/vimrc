@@ -673,9 +673,14 @@ inoremap <C-A> <Home>
 inoremap <C-B> <Left>
 inoremap <C-E> <End>
 inoremap <C-F> <Right>
-" insert mode commands for quick deletion
+" Insert mode commands for quick deletion
 imap <C-X> <BS>
-inoremap <C-H> <ESC>dbxi
+" Insert mode quick move
+inoremap <C-H> <S-Left>
+inoremap <C-L> <S-Right>
+inoremap <C-J> <Down>
+inoremap <C-K> <Up>
+
 " Dvokra keyboard mapping
 " inoremap q '
 " inoremap w ,

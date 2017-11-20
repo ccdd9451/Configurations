@@ -8,3 +8,8 @@
 	default = simple
 [core]
 	autocrlf = input
+	editor = vim
+[help]
+	autocorrect = 1
+[color]
+	ui = true
