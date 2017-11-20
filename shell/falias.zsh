@@ -7,10 +7,6 @@ alias sa='source activate'
 alias sd='source deactivate'
 alias l="ls -lh"
 
-# SSH related
-alias ssh='ssh -Y'
-alias spynb='ssh -N -L localhost:8888:localhost:8888'
-
 # Misc
 alias pickle='python -m pickle'
 alias vpeek='vim -Mn'
@@ -23,6 +19,11 @@ then
     alias open='nautilus >/dev/null 2>&1'
     alias rm='mv --backup=t -t /tmp '
 fi
+
+# if [ `uname` = 'Darwin' ]
+# then
+#     alias rm='mv --backup=t -t /tmp '
+# fi
 
 # Depercated
 # alias init_try(){
