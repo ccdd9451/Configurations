@@ -161,7 +161,7 @@ set nowrap
 " 括号配对情况, 跳转并高亮一下匹配的括号
 set showmatch
 " How many tenths of a second to blink when matching brackets
-set matchtime=2
+set matchtime=1
 
 
 " 设置文内智能搜索提示
@@ -436,10 +436,6 @@ nnoremap <silent> g* g*zz
 " 去掉搜索高亮
 noremap <silent><leader>/ :nohls<CR>
 
-" switch # *
-nnoremap # *
-nnoremap * #
-
 " for # indent, python文件中输入新行时#号注释不切回行首
 autocmd BufNewFile,BufRead *.py inoremap # X<c-h>#
 
@@ -509,12 +505,6 @@ map Y y$
 " 复制选中区到系统剪切板中
 vnoremap <leader>y "+y
 
-" select all
-map <Leader>sa ggVG
-
-" select block
-nnoremap <leader>v V`}
-
 " w!! to sudo & write a file
 cmap w!! w !sudo tee >/dev/null %
 
@@ -533,10 +523,6 @@ nnoremap <leader>w :w<CR>
 " remap U to <C-r> for easier redo
 nnoremap U <C-r>
 
-" Quickly edit/reload the vimrc file
-" nmap <silent> <leader>ev :e $MYVIMRC<CR>
-" nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
 "==========================================
 " FileType Settings  文件类型设置
 "==========================================
@@ -546,6 +532,7 @@ autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 autocmd FileType ruby,javascript,html,css,xml set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
 autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown.mkd
 autocmd BufRead,BufNewFile *.part set filetype=html
+
 " disable showmatch when use > in php
 au BufWinEnter *.php set mps-=<:>
 
@@ -589,33 +576,6 @@ if has("autocmd")
     autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|INFO\|IDEA\|NOTICE\)')
   endif
 endif
-
-"==========================================
-" TEMP 设置, 尚未确定要不要
-"==========================================
-
-" tmux
-" function! WrapForTmux(s)
-"   if !exists('$TMUX')
-"     return a:s
-"   endif
-"
-"   let tmux_start = "\<Esc>Ptmux;"
-"   let tmux_end = "\<Esc>\\"
-"
-"   return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
-" endfunction
-"
-" let &t_SI .= WrapForTmux("\<Esc>[?2004h")
-" let &t_EI .= WrapForTmux("\<Esc>[?2004l")
-
-" allows cursor change in tmux mode
-" let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-" let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-" if exists('$TMUX')
-    " let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    " let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-" endif
 
 
 "==========================================
@@ -670,11 +630,11 @@ highlight SpellLocal term=underline cterm=underline
 
 " Mimic Emacs Line Editing in Insert Mode Only
 inoremap <C-A> <Home>
-inoremap <C-B> <Left>
 inoremap <C-E> <End>
+inoremap <C-B> <Left>
 inoremap <C-F> <Right>
 " Insert mode commands for quick deletion
-imap <C-X> <BS>
+imap <C-D> <S-BS>
 " Insert mode quick move
 inoremap <C-H> <S-Left>
 inoremap <C-L> <S-Right>

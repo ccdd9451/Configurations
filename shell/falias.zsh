@@ -14,11 +14,11 @@ alias vpeek='vim -Mn'
 # for Ubuntu
 if [ `uname` = 'Linux' ]
 then
-    alias pbcopy='xclip -selection clipboard'
-    alias pbpaste='xclip -selection clipboard -o'
-    alias open='nautilus >/dev/null 2>&1'
     alias rm='mv --backup=t -t /tmp '
 fi
+
+# open_command
+alias open='open_command'
 
 # if [ `uname` = 'Darwin' ]
 # then

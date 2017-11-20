@@ -17,7 +17,7 @@ filetype off " required! turn off
 " inspired by spf13, 自定义需要的插件集合
 if !exists('g:bundle_groups')
     " let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'beta', 'json', 'nginx', 'golang', 'ruby', 'less', 'php', 'coffeescript', 'shell']
-    let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'beta']
+    let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'beta', 'ruby']
 endif
 
 " ----------------------------------------------------------------------------
@@ -85,9 +85,6 @@ Plug 'kshenoy/vim-signature'
 " expandregion
 " 选中区块
 Plug 'terryma/vim-expand-region'
-" 多光标选中编辑
-" multiplecursors
-Plug 'terryma/vim-multiple-cursors'
 
 " quick locate file or function
 " 文件搜索
@@ -189,11 +186,7 @@ if count(g:bundle_groups, 'python')
     Plug 'hynek/vim-python-pep8-indent'
     Plug 'Glench/Vim-Jinja2-Syntax'
 
-    " isort  https://github.com/timothycrosley/isort#readme + https://github.com/fisadev/vim-isort#installation
-    " pip install isort
-    Plug 'fisadev/vim-isort'
-    " Shift-V 上下选中, ctrl + i 规范化
-    let g:vim_isort_map = '<C-i>'
+    autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
 
 endif
 
@@ -277,6 +270,7 @@ if count(g:bundle_groups, 'beta')
     let g:indent_guides_start_level = 2
     let g:indent_guides_guide_size = 1
     let g:indent_guides_auto_colors = 0
+    let g:indent_guides_enable_on_vim_startup = 1
     autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
 
@@ -412,12 +406,12 @@ call plug#end()
 
 
 " ultisnips {{{
-    "let g:UltiSnipsExpandTrigger       = "<Tab>"
+    let g:UltiSnipsExpandTrigger       = "<Tab>"
     let g:UltiSnipsJumpForwardTrigger  = "<C-j>"
     let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
     let g:UltiSnipsSnippetDirectories  = ['UltiSnips']
     let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
-    inoremap <Tab> <c-r>=UltiSnips#ExpandSnippet()<cr> 
+    " inoremap <Tab> <c-r>=UltiSnips#ExpandSnippet()<cr>
     " 定义存放代码片段的文件夹 .vim/UltiSnips下，使用自定义和默认的，将会的到全局，有冲突的会提示
     " 进入对应filetype的snippets进行编辑
     map <leader>us :UltiSnipsEdit<CR>
@@ -521,12 +515,6 @@ call plug#end()
 " }}}
 
 " multiplecursors {{{
-    let g:multi_cursor_use_default_mapping=0
-    " Default mapping
-    let g:multi_cursor_next_key='<C-m>'
-    let g:multi_cursor_prev_key='<C-p>'
-    let g:multi_cursor_skip_key='<C-x>'
-    let g:multi_cursor_quit_key='<Esc>'
 " }}}
 
 " ################### 功能相关 ###################
@@ -600,7 +588,6 @@ call plug#end()
 " }}}
 
 " gundo {{{
-    noremap <leader>h :GundoToggle<CR>
 " }}}
 
 " ################### 显示增强 ###################
@@ -682,8 +669,9 @@ call plug#end()
     " nerdtreetabs
     map <Leader>n <plug>NERDTreeTabsToggle<CR>
     " 关闭同步
-    " let g:nerdtree_tabs_synchronize_view=0
-    " let g:nerdtree_tabs_synchronize_focus=0
+    let g:NERDTreeQuitOnOpen=1
+    let g:nerdtree_tabs_synchronize_view=0
+    let g:nerdtree_tabs_synchronize_focus=0
     " 是否自动开启nerdtree
     " thank to @ListenerRi, see https://github.com/wklken/k-vim/issues/165
     " let g:nerdtree_tabs_open_on_console_startup=0
@@ -776,21 +764,12 @@ call plug#end()
         exec "AsyncRun! time bash %"
         elseif &filetype == 'python'
         exec "AsyncRun! time python %"
+        elseif &filetype == 'ruby'
+        exec "AsyncRun! time ruby %"
         endif
     endfunction
 " }}}
 
-" quickrun {{{
-"   let g:quickrun_config = {
-"   \   "_" : {
-"   \       "outputter" : "message",
-"   \   },
-"   \}
-
-"   let g:quickrun_no_default_key_mappings = 1
-"   nmap <Leader>r <Plug>(quickrun)
-"   map <F10> :QuickRun<CR>
-" }}}
 
 
 " pythonsyntax {{{
@@ -841,19 +820,5 @@ call plug#end()
 
 " ####### temp #######
 
-" beta {{{
-    " python code format
-    " format all file
-    autocmd FileType python nnoremap <C-y> :0,$!yapf<Cr>
-    " format select block
-    " autocmd FileType python vnoremap <leader>y :!yapf<Cr>
-
-    " Plug 'mindriot101/vim-yapf'
-    " scriptencoding utf-8
-    " let g:yapf_style = "google"
-    " let g:yapf_style = "pep8"
-    " setenv PYTHONIOENCODING UTF-8
-    " nnoremap <leader>y :call Yapf()<cr>
-" }}}
 
 "------------------------------------------- end of configs --------------------------------------------

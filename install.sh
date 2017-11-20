@@ -8,21 +8,19 @@ fi
 
 # for k-vim
 hash ctags 2>/dev/null || {
-echo 'Need Dependencies installed
-for ubuntu run
+echo '
+# Need Dependencies installed
+# for ubuntu run
 
-sudo apt-get install ctags
-sudo apt-get install build-essential cmake python-dev
-sudo apt-get install silversearcher-ag
+sudo apt-get install ctags build-essential cmake python-dev ilversearcher-ag
 
-for mac run
+# for mac run
 
 brew install ctags the_silver_searcher
 
-and install python utils if you need them
+# and install python utils if you need them
 
 pip install pyflakes pylint pep8
-
 '; exit 1; }
 
 # Set up config
@@ -33,7 +31,6 @@ export CONFIGPATH=$HOME/.config/myconfig
 
 # Link files
 ln -sf $CONFIGPATH/misc/gitconfig $HOME/.gitconfig
-# ln -sf $CONFIGPATH/misc/sshconfig $HOME/.ssh/config
 ln -sf $CONFIGPATH/misc/ctags $HOME/.ctags
 ln -sf $CONFIGPATH/misc/tmux $HOME/.tmux.conf
 ln -sf $CONFIGPATH/misc/irbrc $HOME/.irbrc

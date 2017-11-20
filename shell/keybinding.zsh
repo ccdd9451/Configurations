@@ -1,6 +1,8 @@
-bindkey '^V' vi-cmd-mode
-bindkey '^H' vi-backward-blank-word
-bindkey '^L' vi-forward-blank-word
-bindkey '^D' kill-blank-word
 bindkey '^U' undo
+bindkey '^D' backward-delete-char
 
+bindkey '^F' forward-char
+bindkey '^B' backward-char
+bindkey '^L' vi-forward-blank-word
+bindkey '^H' vi-backward-blank-word
+bindkey '^J' self-insert
