@@ -6,5 +6,5 @@ bindkey '^F' forward-char
 bindkey '^B' backward-char
 bindkey '^L' vi-forward-blank-word
 bindkey '^H' vi-backward-blank-word
-bindkey '^P' up-line-or-history
-bindkey '^N' down-line-or-history
+bindkey '^P' up-line-or-beginning-search
+bindkey '^N' down-line-or-beginning-search
