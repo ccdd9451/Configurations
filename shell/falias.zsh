@@ -5,7 +5,13 @@
 alias init='source setup.ini'
 alias sa='source activate'
 alias sd='source deactivate'
-alias l="ls -lh"
+alias l='clear; dirinfo'
+function dirinfo() {
+    YELLO='\033[0;33m'
+    NC='\033[0m'
+    printf "$YELLO$(pwd)$NC\n"
+    ls --color=always
+}
 
 # Misc
 alias pickle='python -m pickle'
