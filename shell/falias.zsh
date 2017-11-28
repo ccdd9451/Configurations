@@ -5,7 +5,7 @@
 alias init='source setup.ini'
 alias sa='source activate'
 alias sd='source deactivate'
-alias l='clear; dirinfo'
+alias l='dirinfo'
 alias b='cd -1'
 function dirinfo() {
     YELLO='\033[0;33m'
