@@ -11,7 +11,7 @@ function dirinfo() {
     YELLO='\033[0;33m'
     NC='\033[0m'
     printf "$YELLO$(pwd)$NC\n"
-    ls --color=always
+    ls
 }
 
 # Misc
