@@ -28,4 +28,5 @@ fi
 alias open='open_command'
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@;}
+hash thefuck 2>/dev/null && { eval $(thefuck --alias f) }
 
