@@ -27,5 +27,5 @@ fi
 # open_command
 alias open='open_command'
 
-function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}
+function gi() { curl -L -s https://www.gitignore.io/api/$@;}
 
