@@ -2,9 +2,10 @@ require 'rubygems'
 require 'irb/completion'
 require 'map_by_method'
 require 'what_methods'
-require 'pp'
+#require 'pp'
 require 'bond'
 require 'irb/ext/save-history'
+require 'colorize'
 
 Bond.start
 IRB.conf[:AUTO_INDENT]=true
